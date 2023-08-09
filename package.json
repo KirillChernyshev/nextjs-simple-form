@@ -4,7 +4,8 @@
     "dev": "prisma generate && next dev",
     "build": "prisma generate && prisma db push && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "seed": "ts-node --require tsconfig-paths/register prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^5.1.1",
@@ -26,6 +27,11 @@
     "postcss": "^8.4.12",
     "prisma": "^5.1.1",
     "tailwindcss": "^3.0.23",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^4.6.2"
+  },
+  "prisma": {
+    "seed": "ts-node --project tsconfig.json --require tsconfig-paths/register --esm prisma/seed.ts"
   }
 }

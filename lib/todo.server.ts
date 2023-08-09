@@ -1,0 +1,29 @@
+import type { Todo } from "@prisma/client";
+import prisma from "@/lib/prisma";
+
+export type { Todo };
+
+export const getTodoListings = async () => {
+  return prisma.todo.findMany({
+    select: {
+      id: true,
+      title: true,
+    },
+  });
+};
+
+export const getTodos = async () => {
+  return prisma.todo.findMany();
+};
+
+export const getTodo = async (id: string) => {
+  return prisma.todo.findUnique({
+    where: { id },
+  });
+};
+
+export const createTodo = (data: Pick<Todo, "title">) => {
+  return prisma.todo.create({
+    data,
+  });
+};
