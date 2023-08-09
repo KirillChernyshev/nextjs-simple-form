@@ -32,6 +32,6 @@
     "typescript": "^4.6.2"
   },
   "prisma": {
-    "seed": "ts-node --project tsconfig.json --require tsconfig-paths/register --esm prisma/seed.ts"
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} --require tsconfig-paths/register --esm prisma/seed.ts"
   }
 }
