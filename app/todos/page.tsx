@@ -21,6 +21,7 @@ export default async function TodosRoute() {
     "use server";
 
     const title = formData.get("title") as string;
+    console.log("title", title);
     await createTodo({ title });
 
     revalidatePath("/todos");
