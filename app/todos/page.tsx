@@ -24,8 +24,8 @@ export default async function TodosRoute() {
   const { todos } = await getData();
 
   return (
-    <div className="flex h-screen">
-      <div className="w-screen h-screen flex flex-col justify-center items-center">
+    <div className="flex">
+      <div className="w-screen flex flex-col justify-center items-center">
         <div className="min-w-[50vw]">
           <h1 className="text-lg font-semibold">Todos</h1>
           <ul className="mt-2">

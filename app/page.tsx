@@ -1,11 +1,6 @@
 import Link from "next/link";
+import { appTitle } from "./layout";
 
 export default function Home() {
-  return (
-    <div className="flex h-screen">
-      <div className="w-screen h-screen flex flex-col justify-center items-center">
-        <Link href="todos">TODOs</Link>
-      </div>
-    </div>
-  );
+  return <Link href="todos">TODOs</Link>;
 }
