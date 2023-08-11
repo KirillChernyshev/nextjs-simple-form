@@ -10,7 +10,7 @@ export const buttonClasses =
 // This is a Server Action outside the component
 // We can use it without "use server" label
 export async function getData() {
-  const todos = await prisma.todo.findMany();
+  const todos = await prisma.todo.findMany(); // fetch from database
   return { todos };
 }
 
@@ -22,7 +22,7 @@ export default async function TodosRoute() {
 
     const title = formData.get("title") as string;
     console.log("title", title);
-    await createTodo({ title });
+    await createTodo({ title }); // save to database
 
     revalidatePath("/todos");
   }
